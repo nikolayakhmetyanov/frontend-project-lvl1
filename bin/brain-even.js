@@ -2,64 +2,47 @@
 import readlineSync from 'readline-sync';
 import greetings from '../src/cli.js';
 
-const namePlayer = greetings();
-const regulations = 'Answer "yes" if the number is even, otherwise answer "no".';
+const name = greetings();
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
 const countQuastions = 3;
-const messageCorrectAnswer = 'Correct!';
-const messageNoCorrectAnswer = (num, answer, namePlayer) => `'${answer}' is wrong answer ;(. Correct answer was '${isEven(num) ? 'yes' : 'no'}'. Let's try again, ${namePlayer}!`;
 
 const isEven = (num) => num % 2 === 0;
 
-const getRandomInt = () => Math.floor(Math.random() * 100);
-
-const checkAnswer = (num, answer) => {
+const check = (num, answer) => {
   if (answer === 'yes' && isEven(num)) {
-    return true;
+    return [true, 'Correct!'];
   }
 
   if (answer === 'no' && !isEven(num)) {
-    return true;
+    return [true, 'Correct!'];
   }
 
-  return false;
+  return [false, `'${answer}' is wrong answer ;(. Correct answer was '${answer === 'yes' ? 'no' : 'yes'}'. Let's try again, ${name}!`];
 };
 
-const printMessage = (message) => console.log(message);
+function getRandomInt() {
+  return Math.floor(Math.random() * 100);
+}
 
-const runQA = () => {
+let i = 0;
+
+while (i < countQuastions) {
   const num = getRandomInt();
-
-  printMessage(`Quastion: ${num}`);
-
+  console.log(`Quastion: ${num}`);
   const answer = readlineSync.question('Your answer: ');
 
-  const resultQA = checkAnswer(num, answer);
-
-  if (resultQA) {
-    printMessage(messageCorrectAnswer);
-    return true;
+  const [res, message] = check(num, answer);
+  if (res) {
+    console.log(message);
+  } else {
+    console.log(message);
+    break;
   }
 
-  printMessage(messageNoCorrectAnswer(num, answer, namePlayer));
-  return false;
-};
+  i += 1;
 
-const runGame = () => {
-  printMessage(regulations);
-
-  let i = 0;
-
-  while (i < countQuastions) {
-    if(!runQA()) {
-      break;
-    }
-
-    i += 1;
-
-    if (i === 3) {
-      printMessage(`Congratulations, ${namePlayer}!`);
-    }
+  if (i === 3) {
+    console.log(`Congratulations, ${name}!`);
   }
-};
-
-runGame();
+}
