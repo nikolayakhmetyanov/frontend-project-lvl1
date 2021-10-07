@@ -11,14 +11,12 @@ function brainEven(name) {
       return [true, 'Correct!'];
     }
 
-    return [false, `'${answer}' is wrong answer ;(. Correct answer was '${answer === 'yes' ? 'no' : 'yes'}'. Let's try again, ${name}!`];
+    return [false, `'${answer}' is wrong answer ;(. Correct answer was '${answer === 'yes' ? 'no' : 'yes'}'.\nLet's try again, ${name}!`];
   };
 
   function getRandomInt() {
     return Math.floor(Math.random() * 100);
   }
-
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const num = getRandomInt();
   console.log(`Question: ${num}`);

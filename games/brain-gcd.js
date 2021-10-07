@@ -40,8 +40,6 @@ function brainGcd(name) {
     return result;
   }
 
-  console.log('Find the greatest common divisor of given numbers.');
-
   const { resNum, expression } = getGcd();
 
   console.log(`Question: ${expression}`);

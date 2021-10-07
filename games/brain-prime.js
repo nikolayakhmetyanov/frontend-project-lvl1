@@ -35,8 +35,6 @@ function brainPrime(name) {
     return result;
   }
 
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
   const { resNum, num } = getIsPrime();
 
   console.log(`Question: ${num}`);

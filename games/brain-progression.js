@@ -37,8 +37,6 @@ function brainProgression() {
     return result;
   }
 
-  console.log('What is the result of the expression?');
-
   const { resNum, progression } = getProgression();
 
   console.log(`Question: ${progression}`);

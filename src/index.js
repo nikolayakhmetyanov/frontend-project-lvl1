@@ -1,9 +1,10 @@
 import greetings from './greetings.js';
 
-function run(game) {
+function run(game, regulation) {
   const name = greetings();
-
   const countQuestions = 3;
+
+  console.log(regulation);
 
   let i = 0;
 

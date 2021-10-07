@@ -2,4 +2,4 @@
 import run from '../src/index.js';
 import brainProgression from '../games/brain-progression.js';
 
-run(brainProgression);
+run(brainProgression, 'What is the result of the expression?');

@@ -2,4 +2,4 @@
 import run from '../src/index.js';
 import brainCalc from '../games/brain-calc.js';
 
-run(brainCalc);
+run(brainCalc, 'What is the result of the expression?');
