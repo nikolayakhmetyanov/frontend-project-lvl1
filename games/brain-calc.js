@@ -33,6 +33,8 @@ function brainCalc(name) {
     return result;
   }
 
+  console.log('What is the result of the expression?');
+
   const { resNum, expression } = getRandomExpression();
 
   console.log(`Quastion: ${expression}`);
