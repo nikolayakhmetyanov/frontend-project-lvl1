@@ -39,7 +39,7 @@ function brainProgression() {
 
   const { resNum, progression } = getProgression();
 
-  console.log(`Question: ${progression}`);
+  console.log(`Question: ${progression.join(' ')}`);
 
   const answer = askQuestion('Your answer: ');
 
