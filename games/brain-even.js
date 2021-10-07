@@ -18,6 +18,8 @@ function brainEven(name) {
     return Math.floor(Math.random() * 100);
   }
 
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
   const num = getRandomInt();
   console.log(`Quastion: ${num}`);
   const answer = askQuastion('Your answer: ');
