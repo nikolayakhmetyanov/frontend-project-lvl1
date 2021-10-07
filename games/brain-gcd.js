@@ -24,8 +24,6 @@ function brainGcd() {
 
     const [max, min] = sortMaxToMin(num1, num2);
 
-    console.log(max, min);
-
     if (max % min === 0) {
       result.resNum = min;
     } else {
