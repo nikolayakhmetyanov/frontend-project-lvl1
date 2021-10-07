@@ -1,4 +1,4 @@
-import askQuastion from '../src/cli.js';
+import askQuestion from '../src/cli.js';
 
 function brainProgression() {
   const check = (num, answer) => {
@@ -41,9 +41,9 @@ function brainProgression() {
 
   const { resNum, progression } = getProgression();
 
-  console.log(`Quastion: ${progression}`);
+  console.log(`Question: ${progression}`);
 
-  const answer = askQuastion('Your answer: ');
+  const answer = askQuestion('Your answer: ');
 
   return check(resNum, answer);
 }

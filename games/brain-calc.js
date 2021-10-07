@@ -1,4 +1,4 @@
-import askQuastion from '../src/cli.js';
+import askQuestion from '../src/cli.js';
 
 function brainCalc() {
   const check = (num, answer) => {
@@ -37,9 +37,9 @@ function brainCalc() {
 
   const { resNum, expression } = getRandomExpression();
 
-  console.log(`Quastion: ${expression}`);
+  console.log(`Question: ${expression}`);
 
-  const answer = askQuastion('Your answer: ');
+  const answer = askQuestion('Your answer: ');
 
   return check(resNum, answer);
 }

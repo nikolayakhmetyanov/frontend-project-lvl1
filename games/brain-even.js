@@ -1,4 +1,4 @@
-import askQuastion from '../src/cli.js';
+import askQuestion from '../src/cli.js';
 
 function brainEven(name) {
   const isEven = (num) => num % 2 === 0;
@@ -21,8 +21,8 @@ function brainEven(name) {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const num = getRandomInt();
-  console.log(`Quastion: ${num}`);
-  const answer = askQuastion('Your answer: ');
+  console.log(`Question: ${num}`);
+  const answer = askQuestion('Your answer: ');
 
   return check(num, answer);
 }

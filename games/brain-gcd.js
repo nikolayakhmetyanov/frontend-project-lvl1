@@ -1,4 +1,4 @@
-import askQuastion from '../src/cli.js';
+import askQuestion from '../src/cli.js';
 
 function brainGcd() {
   const check = (num, answer) => {
@@ -46,9 +46,9 @@ function brainGcd() {
 
   const { resNum, expression } = getGcd();
 
-  console.log(`Quastion: ${expression}`);
+  console.log(`Question: ${expression}`);
 
-  const answer = askQuastion('Your answer: ');
+  const answer = askQuestion('Your answer: ');
 
   return check(resNum, answer);
 }

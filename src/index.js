@@ -3,11 +3,11 @@ import greetings from './greetings.js';
 function run(game) {
   const name = greetings();
 
-  const countQuastions = 3;
+  const countQuestions = 3;
 
   let i = 0;
 
-  while (i < countQuastions) {
+  while (i < countQuestions) {
     const [result, message] = game(name);
 
     if (result) {

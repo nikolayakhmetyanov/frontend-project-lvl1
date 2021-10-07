@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
-function askQuastion(question) {
+function askQuestion(question) {
   return readlineSync.question(question);
 }
 
-export default askQuastion;
+export default askQuestion;

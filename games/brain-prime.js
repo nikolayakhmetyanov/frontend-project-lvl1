@@ -1,4 +1,4 @@
-import askQuastion from '../src/cli.js';
+import askQuestion from '../src/cli.js';
 
 function brainPrime(name) {
   const check = (num, answer) => {
@@ -39,9 +39,9 @@ function brainPrime(name) {
 
   const { resNum, num } = getIsPrime();
 
-  console.log(`Quastion: ${num}`);
+  console.log(`Question: ${num}`);
 
-  const answer = askQuastion('Your answer: ');
+  const answer = askQuestion('Your answer: ');
 
   return check(resNum, answer);
 }
