@@ -1,12 +1,12 @@
 import askQuestion from '../src/cli.js';
 
-function brainCalc() {
+function brainCalc(name) {
   const check = (num, answer) => {
     if (parseInt(answer, 10) === num) {
       return [true, 'Correct!'];
     }
 
-    return [false, `'${answer}' is wrong answer ;(. Correct answer was '${num}!`];
+    return [false, `'${answer}' is wrong answer ;(. Correct answer was '${num}'.\nLet's try again, ${name}!`];
   };
 
   function getRandomInt() {
