@@ -29,7 +29,10 @@ function brainGcd(name) {
     } else {
       let divider = min - 1;
 
-      while (max % min !== 0 && min % divider !== 0) {
+      while (divider > 1) {
+        if (max % divider === 0 && min % divider === 0) {
+          break;
+        }
         divider -= 1;
       }
       result.resNum = divider;
