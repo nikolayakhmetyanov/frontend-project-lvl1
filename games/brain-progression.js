@@ -1,6 +1,6 @@
-import { askQuastion } from '../src/cli.js';
+import askQuastion from '../src/cli.js';
 
-function brainProgression(name) {
+function brainProgression() {
   const check = (num, answer) => {
     if (parseInt(answer, 10) === num) {
       return [true, 'Correct!'];
@@ -19,7 +19,6 @@ function brainProgression(name) {
     const magicIndex = Math.floor(Math.random() * progressionLength);
     let startNumber = Math.floor(Math.random() * 100);
     const progression = [];
-
 
     let i = 0;
     while (i < progressionLength) {
@@ -49,4 +48,4 @@ function brainProgression(name) {
   return check(resNum, answer);
 }
 
-export { brainProgression };
+export default brainProgression;

@@ -4,4 +4,4 @@ function askQuastion(question) {
   return readlineSync.question(question);
 }
 
-export { askQuastion };
+export default askQuastion;

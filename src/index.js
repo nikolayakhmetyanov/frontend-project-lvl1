@@ -1,4 +1,4 @@
-import { greetings } from './greetings.js';
+import greetings from './greetings.js';
 
 function run(game) {
   const name = greetings();

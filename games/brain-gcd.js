@@ -1,6 +1,6 @@
-import { askQuastion } from '../src/cli.js';
+import askQuastion from '../src/cli.js';
 
-function brainGcd(name) {
+function brainGcd() {
   const check = (num, answer) => {
     if (parseInt(answer, 10) === num) {
       return [true, 'Correct!'];
@@ -53,4 +53,4 @@ function brainGcd(name) {
   return check(resNum, answer);
 }
 
-export { brainGcd };
+export default brainGcd;

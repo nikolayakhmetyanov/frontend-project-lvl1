@@ -1,4 +1,4 @@
-import { askQuastion } from "../src/cli.js";
+import askQuastion from '../src/cli.js';
 
 function brainEven(name) {
   const isEven = (num) => num % 2 === 0;
@@ -27,4 +27,4 @@ function brainEven(name) {
   return check(num, answer);
 }
 
-export { brainEven };
+export default brainEven;

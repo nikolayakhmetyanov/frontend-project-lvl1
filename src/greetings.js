@@ -1,4 +1,4 @@
-import { askQuastion } from './cli.js';
+import askQuastion from './cli.js';
 
 function greetings() {
   console.log('Welcome to the Brain Games!');
@@ -8,4 +8,4 @@ function greetings() {
   return name;
 }
 
-export { greetings };
+export default greetings;

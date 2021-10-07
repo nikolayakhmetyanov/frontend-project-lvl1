@@ -1,4 +1,4 @@
-import { askQuastion } from '../src/cli.js';
+import askQuastion from '../src/cli.js';
 
 function brainPrime(name) {
   const check = (num, answer) => {
@@ -24,12 +24,12 @@ function brainPrime(name) {
     result.num = num;
     let i = 2;
 
-    while(i < num / 2) {
+    while (i < num / 2) {
       if (num % i === 0) {
         result.resNum = false;
         break;
       }
-      i++
+      i += 1;
     }
 
     return result;
@@ -46,4 +46,4 @@ function brainPrime(name) {
   return check(resNum, answer);
 }
 
-export { brainPrime };
+export default brainPrime;

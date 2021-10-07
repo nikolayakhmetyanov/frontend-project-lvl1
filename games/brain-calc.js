@@ -1,6 +1,6 @@
-import { askQuastion } from '../src/cli.js';
+import askQuastion from '../src/cli.js';
 
-function brainCalc(name) {
+function brainCalc() {
   const check = (num, answer) => {
     if (parseInt(answer, 10) === num) {
       return [true, 'Correct!'];
@@ -44,4 +44,4 @@ function brainCalc(name) {
   return check(resNum, answer);
 }
 
-export { brainCalc };
+export default brainCalc;
