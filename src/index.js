@@ -1,4 +1,4 @@
-import greetings from './greetings.js';
+import greetings from './cli.js';
 
 function run(game, regulation) {
   const name = greetings();

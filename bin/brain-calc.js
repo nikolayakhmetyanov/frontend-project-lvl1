@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import run from '../src/index.js';
-import brainCalc from '../games/brain-calc.js';
+import { game, regulation } from '../src/games/brain-calc.js';
 
-run(brainCalc, 'What is the result of the expression?');
+run(game, regulation);
