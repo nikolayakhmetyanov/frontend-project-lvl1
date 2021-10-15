@@ -1,24 +1,20 @@
-import readlineSync from 'readline-sync';
-import getRandomInt from '../helpers/helpers.js';
+import { getAnswerUser, printQuestion } from '../cli.js';
+import { getRandomInt } from '../helpers.js';
 
-const regulation = 'Find the greatest common divisor of given numbers.';
-const check = (num, answer, name) => {
-  if (parseInt(answer, 10) === num) {
-    return [true, 'Correct!'];
-  }
-
-  return [false, `'${answer}' is wrong answer ;(. Correct answer was '${num}'.\nLet's try again, ${name}!`];
+const settings = {
+  regulation: 'Find the greatest common divisor of given numbers.',
+  countQuestions: 3,
 };
-const sortMaxToMin = (num1, num2) => (num1 > num2 ? [num1, num2] : [num2, num1]);
 
 const getGcd = () => {
   const num1 = getRandomInt();
   const num2 = getRandomInt();
-  const [max, min] = sortMaxToMin(num1, num2);
-  const result = {};
+  const [max, min] = num1 > num2 ? [num1, num2] : [num2, num1];
+
+  let result;
 
   if (max % min === 0) {
-    result.resNum = min;
+    result = min;
   } else {
     let divider = min - 1;
     while (divider > 1) {
@@ -27,20 +23,19 @@ const getGcd = () => {
       }
       divider -= 1;
     }
-    result.resNum = divider;
+    result = divider;
   }
 
-  result.expression = `${num1} ${num2}`;
-
-  return result;
+  return [result, `${num1} ${num2}`];
 };
 
-const game = (name) => {
-  const { resNum, expression } = getGcd();
-  console.log(`Question: ${expression}`);
-  const answer = readlineSync.question('Your answer: ');
+const game = () => {
+  const [result, expression] = getGcd();
 
-  return check(resNum, answer, name);
+  printQuestion(expression);
+  const userAnswer = getAnswerUser();
+
+  return [userAnswer === result, userAnswer, result];
 };
 
-export { game, regulation };
+export { game, settings };

@@ -1,29 +1,23 @@
-import greetings from './cli.js';
+import { printGreetings } from './cli.js';
 
-function run(game, regulation) {
-  const name = greetings();
-  const countQuestions = 3;
+const run = (game, settings) => {
+  const name = printGreetings();
+  console.log(settings.regulation);
 
-  console.log(regulation);
-
-  let i = 0;
-
-  while (i < countQuestions) {
-    const [result, message] = game(name);
+  for (let i = 1; i <= settings.countQuestions; i += 1) {
+    const [result, userAnswer, correctAnswer] = game();
 
     if (result) {
-      console.log(message);
+      console.log('Correct!');
     } else {
-      console.log(message);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       break;
     }
 
-    i += 1;
-
-    if (i === 3) {
+    if (i === settings.countQuestions) {
       console.log(`Congratulations, ${name}!`);
     }
   }
-}
+};
 
 export default run;

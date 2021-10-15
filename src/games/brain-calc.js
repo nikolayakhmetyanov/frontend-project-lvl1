@@ -1,40 +1,41 @@
-import readlineSync from 'readline-sync';
-import getRandomInt from '../helpers/helpers.js';
+import { getAnswerUser, printQuestion } from '../cli';
+import { getRandomInt } from '../helpers.js';
 
-const regulation = 'What is the result of the expression?';
-const check = (num, answer, name) => {
-  if (parseInt(answer, 10) === num) {
-    return [true, 'Correct!'];
-  }
-
-  return [false, `'${answer}' is wrong answer ;(. Correct answer was '${num}'.\nLet's try again, ${name}!`];
+const settings = {
+  regulation: 'What is the result of the expression?',
+  countQuestions: 3,
 };
+
 const getRandomExpression = () => {
   const operation = getRandomInt();
   const num1 = getRandomInt();
   const num2 = getRandomInt();
-  const result = {};
+
+  let result;
+  let expression;
 
   if (operation % 5 === 0) {
-    result.resNum = num1 * num2;
-    result.expression = `${num1} * ${num2}`;
+    result = num1 * num2;
+    expression = `${num1} * ${num2}`;
   } if (operation % 2 === 0) {
-    result.resNum = num1 + num2;
-    result.expression = `${num1} + ${num2}`;
+    result = num1 + num2;
+    expression = `${num1} + ${num2}`;
   } else {
-    result.resNum = num1 - num2;
-    result.expression = `${num1} - ${num2}`;
+    result = num1 - num2;
+    expression = `${num1} - ${num2}`;
   }
 
-  return result;
+  return [parseInt(result, 10), expression];
 };
 
-const game = (name) => {
-  const { resNum, expression } = getRandomExpression();
-  console.log(`Question: ${expression}`);
-  const answer = readlineSync.question('Your answer: ');
+const game = () => {
+  const [result, expression] = getRandomExpression();
+  const correctAnswer = result;
 
-  return check(resNum, answer, name);
+  printQuestion(expression);
+  const userAnswer = parseInt(getAnswerUser(), 10);
+
+  return [userAnswer === result, userAnswer, correctAnswer];
 };
 
-export { game, regulation };
+export { game, settings };

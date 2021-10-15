@@ -1,26 +1,19 @@
-import readlineSync from 'readline-sync';
-import getRandomInt from '../helpers/helpers.js';
+import { getAnswerUser, printQuestion } from '../cli.js';
+import { getRandomInt, isEven } from '../helpers.js';
 
-const regulation = 'Answer "yes" if the number is even, otherwise answer "no".';
-const isEven = (num) => num % 2 === 0;
-const check = (num, answer, name) => {
-  if (answer === 'yes' && isEven(num)) {
-    return [true, 'Correct!'];
-  }
-
-  if (answer === 'no' && !isEven(num)) {
-    return [true, 'Correct!'];
-  }
-
-  return [false, `'${answer}' is wrong answer ;(. Correct answer was '${answer === 'yes' ? 'no' : 'yes'}'.\nLet's try again, ${name}!`];
+const settings = {
+  regulation: 'Answer "yes" if the number is even, otherwise answer "no".',
+  countQuestions: 3,
 };
 
-const game = (name) => {
-  const num = getRandomInt();
-  console.log(`Question: ${num}`);
-  const answer = readlineSync.question('Your answer: ');
+const game = () => {
+  const question = getRandomInt();
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
 
-  return check(num, answer, name);
+  printQuestion(question);
+  const userAnswer = getAnswerUser();
+
+  return [userAnswer === correctAnswer, userAnswer, correctAnswer];
 };
 
-export { game, regulation };
+export { game, settings };

@@ -1,4 +1,4 @@
 import run from '../src/index.js';
-import { game, regulation } from '../src/games/brain-progression.js';
+import { game, settings } from '../src/games/brain-progression.js';
 
-run(game, regulation);
+run(game, settings );

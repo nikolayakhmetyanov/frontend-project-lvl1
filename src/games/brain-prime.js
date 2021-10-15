@@ -1,28 +1,18 @@
-import readlineSync from 'readline-sync';
-import getRandomInt from '../helpers/helpers.js';
+import { getAnswerUser, printQuestion } from '../cli.js';
+import { getRandomInt } from '../helpers.js';
 
-const regulation = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const check = (num, answer, name) => {
-  if (answer === 'yes' && num) {
-    return [true, 'Correct!'];
-  }
-
-  if (answer === 'no' && !num) {
-    return [true, 'Correct!'];
-  }
-
-  return [false, `'${answer}' is wrong answer ;(. Correct answer was '${answer === 'yes' ? 'no' : 'yes'}'. Let's try again, ${name}!`];
+const settings = {
+  regulation: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  countQuestions: 3,
 };
-const getIsPrime = () => {
-  const num = getRandomInt();
-  const result = {};
-  result.resNum = true;
-  result.num = num;
+
+const isPrime = (num) => {
+  let result = 'yes';
   let i = 2;
 
   while (i < num / 2) {
     if (num % i === 0) {
-      result.resNum = false;
+      result = 'no';
       break;
     }
     i += 1;
@@ -31,12 +21,14 @@ const getIsPrime = () => {
   return result;
 };
 
-const game = (name) => {
-  const { resNum, num } = getIsPrime();
-  console.log(`Question: ${num}`);
-  const answer = readlineSync.question('Your answer: ');
+const game = () => {
+  const number = getRandomInt();
+  const correctAnswer = isPrime(number);
 
-  return check(resNum, answer, name);
+  printQuestion(number);
+  const userAnswer = getAnswerUser();
+
+  return [userAnswer === correctAnswer, userAnswer, correctAnswer];
 };
 
-export { game, regulation };
+export { game, settings };
