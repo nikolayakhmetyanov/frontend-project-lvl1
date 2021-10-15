@@ -26,7 +26,7 @@ const getGcd = () => {
     result = divider;
   }
 
-  return [result, `${num1} ${num2}`];
+  return [parseInt(result, 10), `${num1} ${num2}`];
 };
 
 const game = () => {
@@ -35,7 +35,7 @@ const game = () => {
   printQuestion(expression);
   const userAnswer = getAnswerUser();
 
-  return [userAnswer === result, userAnswer, result];
+  return [parseInt(userAnswer, 10) === result, userAnswer, result];
 };
 
 export { game, settings };
