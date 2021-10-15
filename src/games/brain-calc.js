@@ -1,4 +1,4 @@
-import { getAnswerUser, printQuestion } from '../cli';
+import { getAnswerUser, printQuestion } from '../cli.js';
 import { getRandomInt } from '../helpers.js';
 
 const settings = {
@@ -30,12 +30,11 @@ const getRandomExpression = () => {
 
 const game = () => {
   const [result, expression] = getRandomExpression();
-  const correctAnswer = result;
 
   printQuestion(expression);
   const userAnswer = parseInt(getAnswerUser(), 10);
 
-  return [userAnswer === result, userAnswer, correctAnswer];
+  return [userAnswer === result, userAnswer, result];
 };
 
 export { game, settings };
