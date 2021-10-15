@@ -10,7 +10,7 @@ const getProgression = () => {
   let result;
   const progression = [];
 
-  const progressionLength = getRandomInt() * (11 - 5) + 5;
+  const progressionLength = (getRandomInt() / 100) * (11 - 5) + 5;
   const magicIndex = Math.floor(Math.random() * progressionLength);
   let startNumber = Math.floor(Math.random() * 100);
 
