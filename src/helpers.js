@@ -1,4 +1,3 @@
-const getRandomInt = () => Math.floor(Math.random() * 100);
-const isEven = (num) => num % 2 === 0;
+const getRandomNumber = (max = 100) => Math.floor(Math.random() * max);
 
-export { getRandomInt, isEven };
+export default getRandomNumber;

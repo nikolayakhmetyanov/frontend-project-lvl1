@@ -1,5 +1,5 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
-import { getRandomInt } from '../helpers.js';
+import getRandomNumber from '../helpers.js';
 
 const settings = {
   regulation: 'What is the result of the expression?',
@@ -7,9 +7,9 @@ const settings = {
 };
 
 const getRandomExpression = () => {
-  const operation = getRandomInt();
-  const num1 = getRandomInt();
-  const num2 = getRandomInt();
+  const operation = getRandomNumber();
+  const num1 = getRandomNumber();
+  const num2 = getRandomNumber();
 
   let result;
   let expression;

@@ -1,5 +1,5 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
-import { getRandomInt } from '../helpers.js';
+import getRandomNumber from '../helpers.js';
 
 const settings = {
   regulation: 'Find the greatest common divisor of given numbers.',
@@ -7,8 +7,8 @@ const settings = {
 };
 
 const getGcd = () => {
-  const num1 = getRandomInt();
-  const num2 = getRandomInt();
+  const num1 = getRandomNumber();
+  const num2 = getRandomNumber();
   const [max, min] = num1 > num2 ? [num1, num2] : [num2, num1];
 
   let result;
