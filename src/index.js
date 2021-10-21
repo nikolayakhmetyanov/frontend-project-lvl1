@@ -10,7 +10,10 @@ const run = (game, settings) => {
     if (result) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+      console.log(`
+        '${userAnswer}' is wrong answer ;(.
+        Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!
+      `);
       break;
     }
 
