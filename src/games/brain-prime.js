@@ -1,10 +1,7 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
 import getRandomNumber from '../helpers.js';
 
-const settings = {
-  regulation: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-  countQuestions: 3,
-};
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   let result = 'yes';
@@ -31,4 +28,4 @@ const game = () => {
   return [userAnswer === correctAnswer, userAnswer, correctAnswer];
 };
 
-export { game, settings };
+export default { game, rule };

@@ -1,10 +1,7 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
 import getRandomNumber from '../helpers.js';
 
-const settings = {
-  regulation: 'What is the result of the expression?',
-  countQuestions: 3,
-};
+const rule = 'What is the result of the expression?';
 
 const getRandomExpression = () => {
   const operation = getRandomNumber();
@@ -17,7 +14,7 @@ const getRandomExpression = () => {
   if (operation % 5 === 0) {
     result = num1 * num2;
     expression = `${num1} * ${num2}`;
-  } if (operation % 2 === 0) {
+  } else if (operation % 2 === 0) {
     result = num1 + num2;
     expression = `${num1} + ${num2}`;
   } else {
@@ -37,4 +34,4 @@ const game = () => {
   return [userAnswer === result, userAnswer, result];
 };
 
-export { game, settings };
+export default { game, rule };

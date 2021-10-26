@@ -1,10 +1,7 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
 import getRandomNumber from '../helpers.js';
 
-const settings = {
-  regulation: 'Find the greatest common divisor of given numbers.',
-  countQuestions: 3,
-};
+const rule = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = () => {
   const num1 = getRandomNumber();
@@ -38,4 +35,4 @@ const game = () => {
   return [parseInt(userAnswer, 10) === result, userAnswer, result];
 };
 
-export { game, settings };
+export default { game, rule };

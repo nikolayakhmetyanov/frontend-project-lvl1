@@ -1,10 +1,7 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
 import getRandomNumber from '../helpers.js';
 
-const settings = {
-  regulation: 'What is the result of the expression?',
-  countQuestions: 3,
-};
+const rule = 'What is the result of the expression?';
 
 const getProgression = () => {
   let result;
@@ -39,4 +36,4 @@ const game = () => {
   return [userAnswer === result, userAnswer, result];
 };
 
-export { game, settings };
+export default { game, rule };

@@ -1,19 +1,17 @@
 import { greet } from './cli.js';
 
-const run = (game, settings) => {
+const run = ({ game, rule }) => {
+  const countQuestions = 3;
   const name = greet();
-  console.log(settings.regulation);
+  console.log(rule);
 
-  for (let i = 1; i <= settings.countQuestions; i += 1) {
+  for (let i = 1; i <= countQuestions; i += 1) {
     const [result, userAnswer, correctAnswer] = game();
 
     if (result) {
       console.log('Correct!');
     } else {
-      console.log(`
-        '${userAnswer}' is wrong answer ;(.
-        Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!
-      `);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       return;
     }
   }
