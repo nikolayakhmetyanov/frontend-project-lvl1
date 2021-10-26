@@ -1,7 +1,7 @@
-import { printGreetings } from './cli.js';
+import { greet } from './cli.js';
 
 const run = (game, settings) => {
-  const name = printGreetings();
+  const name = greet();
   console.log(settings.regulation);
 
   for (let i = 1; i <= settings.countQuestions; i += 1) {
@@ -14,13 +14,11 @@ const run = (game, settings) => {
         '${userAnswer}' is wrong answer ;(.
         Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!
       `);
-      break;
-    }
-
-    if (i === settings.countQuestions) {
-      console.log(`Congratulations, ${name}!`);
+      return;
     }
   }
+
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default run;
