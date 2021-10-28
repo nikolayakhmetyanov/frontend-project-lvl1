@@ -1,10 +1,33 @@
 ### Linter status:
 [![Actions Status](https://github.com/nikolayakhmetyanov/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nikolayakhmetyanov/frontend-project-lvl1/actions)
 
-## Пакет игр для консоли:
+* * *
+## About
+**Brain Games** is a package of simple console math games. <br>
+Check your mathematical abilities, give 3 right answers in a row and win!
 
-- Even - https://asciinema.org/a/g5RDhVADUg8YLAZgJv3eceA8B
-- Prime - https://asciinema.org/a/H43i3lSatxQWmCah6tD32CavY
-- Calc - https://asciinema.org/a/fBDMe4ofbiFYWCtihkp6NExes
-- Progression - https://asciinema.org/a/HgIBx5mKbj6ChWgfjy8XkKNyx
-- Gcd - https://asciinema.org/a/qOIeh5xGDVx0C3dnYVDnNtMRS
+## Installation
+You must have [**node.js**](https://nodejs.org/en/) installed on your machine (version 14.x is preferable). <br>
+To install the package on you machine run:
+<pre><code>npm install -g @hexlet/code</code></pre>
+
+## Games
+#### Brain Even
+You need to answer if number is even or not. To start this game run:
+<pre><code>brain-even</code></pre>
+[![asciicast](https://asciinema.org/a/Xl2QM3fHlkyww9mrYP0LgLuQM.svg)](https://asciinema.org/a/Xl2QM3fHlkyww9mrYP0LgLuQM)
+
+#### Brain Calc
+You need to calculate the result of the expression. To start this game run:
+<pre><code>brain-calc</code></pre>
+[![asciicast](https://asciinema.org/a/YbxXS3EITuW44dRhoNv13Usvx.svg)](https://asciinema.org/a/YbxXS3EITuW44dRhoNv13Usvx)
+
+#### Brain Greatest Common Divisor
+You need to find the greatest common divisor of given numbers. To start this game run:
+<pre><code>brain-gcd</code></pre>
+[![asciicast](https://asciinema.org/a/9C4Tr7GYhbV7HDtGArsp6tsY5.svg)](https://asciinema.org/a/9C4Tr7GYhbV7HDtGArsp6tsY5)
+
+#### Brain Progression
+You need to print the missing number in progression. To start this game run:
+<pre><code>brain-progression</code></pre>
+[![asciicast](https://asciinema.org/a/D9By94SKU50OriWzYxoImxz23.svg)](https://asciinema.org/a/D9By94SKU50OriWzYxoImxz23)
