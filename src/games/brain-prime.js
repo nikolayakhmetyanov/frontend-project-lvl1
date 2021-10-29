@@ -1,4 +1,4 @@
-import { getAnswerUser, printQuestion } from '../cli.js';
+import { printQuestionGetAnswer } from '../cli.js';
 import genRandomNumber from '../helpers.js';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -22,10 +22,9 @@ const game = () => {
   const number = genRandomNumber(0, 100);
   const correctAnswer = isPrime(number);
 
-  printQuestion(number);
-  const userAnswer = getAnswerUser();
+  const userAnswer = printQuestionGetAnswer(number);
 
-  return [userAnswer === correctAnswer, userAnswer, correctAnswer];
+  return [parseInt(userAnswer, 10) === correctAnswer, userAnswer, correctAnswer];
 };
 
 export default { game, rule };

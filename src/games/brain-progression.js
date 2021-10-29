@@ -1,4 +1,4 @@
-import { getAnswerUser, printQuestion } from '../cli.js';
+import { printQuestionGetAnswer } from '../cli.js';
 import genRandomNumber from '../helpers.js';
 
 const rule = 'What is the result of the expression?';
@@ -30,10 +30,9 @@ const getProgression = () => {
 const game = () => {
   const [result, progression] = getProgression();
 
-  printQuestion(progression.join(' '));
-  const userAnswer = parseInt(getAnswerUser(), 10);
+  const userAnswer = printQuestionGetAnswer(progression.join(' '));
 
-  return [userAnswer === result, userAnswer, result];
+  return [parseInt(userAnswer, 10) === result, userAnswer, result];
 };
 
 export default { game, rule };

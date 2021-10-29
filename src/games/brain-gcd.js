@@ -1,4 +1,4 @@
-import { getAnswerUser, printQuestion } from '../cli.js';
+import { printQuestionGetAnswer } from '../cli.js';
 import genRandomNumber from '../helpers.js';
 
 const rule = 'Find the greatest common divisor of given numbers.';
@@ -29,8 +29,7 @@ const getGcd = () => {
 const game = () => {
   const [result, expression] = getGcd();
 
-  printQuestion(expression);
-  const userAnswer = getAnswerUser();
+  const userAnswer = printQuestionGetAnswer(expression);
 
   return [parseInt(userAnswer, 10) === result, userAnswer, result];
 };

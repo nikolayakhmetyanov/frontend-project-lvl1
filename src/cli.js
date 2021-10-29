@@ -8,7 +8,9 @@ const greet = () => {
   return name;
 };
 
-const printQuestion = (q) => console.log(`Question: ${q}`);
-const getAnswerUser = () => readlineSync.question('Your answer: ');
+const printQuestionGetAnswer = (q) => {
+  console.log(`Question: ${q}`);
+  return readlineSync.question('Your answer: ');
+};
 
-export { greet, getAnswerUser, printQuestion };
+export { greet, printQuestionGetAnswer };
