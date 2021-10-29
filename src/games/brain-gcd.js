@@ -4,8 +4,8 @@ import genRandomNumber from '../helpers.js';
 const rule = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = () => {
-  const num1 = genRandomNumber(0, 100);
-  const num2 = genRandomNumber(0, 100);
+  const num1 = genRandomNumber(1, 100);
+  const num2 = genRandomNumber(1, 100);
   const [max, min] = num1 > num2 ? [num1, num2] : [num2, num1];
 
   let result;
