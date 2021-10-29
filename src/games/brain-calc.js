@@ -1,28 +1,23 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
-import getRandomNumber from '../helpers.js';
+import genRandomNumber from '../helpers.js';
 
 const rule = 'What is the result of the expression?';
 
+const operations = {
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
+};
+
 const getRandomExpression = () => {
-  const operation = getRandomNumber();
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
-
-  let result;
-  let expression;
-
-  if (operation % 5 === 0) {
-    result = num1 * num2;
-    expression = `${num1} * ${num2}`;
-  } else if (operation % 2 === 0) {
-    result = num1 + num2;
-    expression = `${num1} + ${num2}`;
-  } else {
-    result = num1 - num2;
-    expression = `${num1} - ${num2}`;
-  }
-
-  return [parseInt(result, 10), expression];
+  const operandOne = genRandomNumber(1, 100);
+  const operandTwo = genRandomNumber(1, 10);
+  const operationsLength = Object.keys(operations).length;
+  const randomOperationIndex = genRandomNumber(0, operationsLength - 1);
+  const [operator, calculate] = Object.entries(operations)[randomOperationIndex];
+  const expression = `${operandOne} ${operator} ${operandTwo}`;
+  const result = calculate(operandOne, operandTwo);
+  return [result, expression];
 };
 
 const game = () => {
