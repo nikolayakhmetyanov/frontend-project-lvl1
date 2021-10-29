@@ -1,5 +1,5 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
-import getRandomNumber from '../helpers.js';
+import genRandomNumber from '../helpers.js';
 
 const rule = 'What is the result of the expression?';
 
@@ -10,9 +10,9 @@ const getProgression = () => {
   const minLength = 5;
   const maxLength = 11;
 
-  const progressionLength = (getRandomNumber() / 100) * (maxLength - minLength) + minLength;
-  const magicIndex = Math.floor(Math.random() * progressionLength);
-  let startNumber = Math.floor(Math.random() * 100);
+  const progressionLength = genRandomNumber(minLength, maxLength);
+  const magicIndex = genRandomNumber(0, progressionLength - 1);
+  let startNumber = genRandomNumber(1, 20);
 
   for (let i = 0; i < progressionLength; i += 1) {
     if (magicIndex === i) {

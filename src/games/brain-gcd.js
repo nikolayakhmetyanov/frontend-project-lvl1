@@ -1,11 +1,11 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
-import getRandomNumber from '../helpers.js';
+import genRandomNumber from '../helpers.js';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = () => {
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
+  const num1 = genRandomNumber(0, 100);
+  const num2 = genRandomNumber(0, 100);
   const [max, min] = num1 > num2 ? [num1, num2] : [num2, num1];
 
   let result;

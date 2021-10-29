@@ -1,5 +1,5 @@
 import { getAnswerUser, printQuestion } from '../cli.js';
-import getRandomNumber from '../helpers.js';
+import genRandomNumber from '../helpers.js';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -19,7 +19,7 @@ const isPrime = (num) => {
 };
 
 const game = () => {
-  const number = getRandomNumber();
+  const number = genRandomNumber(0, 100);
   const correctAnswer = isPrime(number);
 
   printQuestion(number);
