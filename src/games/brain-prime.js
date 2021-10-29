@@ -24,7 +24,7 @@ const game = () => {
 
   const userAnswer = printQuestionGetAnswer(number);
 
-  return [parseInt(userAnswer, 10) === correctAnswer, userAnswer, correctAnswer];
+  return [userAnswer === correctAnswer, userAnswer, correctAnswer];
 };
 
 export default { game, rule };
