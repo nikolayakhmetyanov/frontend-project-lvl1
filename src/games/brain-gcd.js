@@ -1,12 +1,10 @@
-import { printQuestionGetAnswer } from '../cli.js';
 import genRandomNumber from '../helpers.js';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
-const getGcd = () => {
-  const num1 = genRandomNumber(1, 100);
-  const num2 = genRandomNumber(1, 100);
-  const [max, min] = num1 > num2 ? [num1, num2] : [num2, num1];
+const getGcd = (num1, num2) => {
+  const min = Math.min(num1, num2);
+  const max = Math.max(num1, num2);
 
   let result;
 
@@ -23,15 +21,16 @@ const getGcd = () => {
     result = divider;
   }
 
-  return [parseInt(result, 10), `${num1} ${num2}`];
+  return result;
 };
 
-const game = () => {
-  const [result, expression] = getGcd();
+const makeRound = () => {
+  const num1 = genRandomNumber(1, 100);
+  const num2 = genRandomNumber(1, 100);
+  const question = `${num1} ${num2}`;
+  const answer = getGcd(num1, num2);
 
-  const userAnswer = printQuestionGetAnswer(expression);
-
-  return [parseInt(userAnswer, 10) === result, userAnswer, result];
+  return [question, answer];
 };
 
-export default { game, rule };
+export default { makeRound, rule };
