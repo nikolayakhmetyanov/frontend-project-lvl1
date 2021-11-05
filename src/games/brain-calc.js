@@ -1,4 +1,3 @@
-import { printQuestionGetAnswer } from '../cli.js';
 import genRandomNumber from '../helpers.js';
 
 const rule = 'What is the result of the expression?';
@@ -9,23 +8,19 @@ const operations = {
   '*': (a, b) => a * b,
 };
 
-const getRandomExpression = () => {
+const getRandomElement = (items) => items[Math.floor(Math.random() * items.length)];
+
+const makeRound = () => {
+  // Ген. случ. аргументы
   const operandOne = genRandomNumber(1, 100);
   const operandTwo = genRandomNumber(1, 10);
-  const operationsLength = Object.keys(operations).length;
-  const randomOperationIndex = genRandomNumber(0, operationsLength - 1);
-  const [operator, calculate] = Object.entries(operations)[randomOperationIndex];
-  const expression = `${operandOne} ${operator} ${operandTwo}`;
-  const result = calculate(operandOne, operandTwo);
-  return [result, expression];
+  // Ген. вопроса
+  const operator = getRandomElement(Object.keys(operations));
+  const question = `${operandOne} ${operator} ${operandTwo}`;
+  // Правильный ответ
+  const answer = operations[operator](operandOne, operandTwo);
+
+  return [question, answer];
 };
 
-const game = () => {
-  const [result, expression] = getRandomExpression();
-
-  const userAnswer = printQuestionGetAnswer(expression);
-
-  return [parseInt(userAnswer, 10) === result, userAnswer, result];
-};
-
-export default { game, rule };
+export default { makeRound, rule };
