@@ -1,4 +1,5 @@
 ### Linter status:
+<a href="https://codeclimate.com/github/nikolayakhmetyanov/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/50c5b799ea8cc2a4b0fe/maintainability" /></a>
 [![Actions Status](https://github.com/nikolayakhmetyanov/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nikolayakhmetyanov/frontend-project-lvl1/actions)
 
 * * *
